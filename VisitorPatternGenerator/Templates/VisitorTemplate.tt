@@ -7,7 +7,7 @@
 namespace <#= GetNamespace(Acceptor) #>
 {
 <# } #>
-partial <#= Acceptor.TypeKind == TypeKind.Interface ? "interface" : "class" #> <#= GetTypeIdentifier(Acceptor) #>
+partial <#= GetTypeDeclarationKeyword(Acceptor) #> <#= GetTypeIdentifier(Acceptor) #>
 {
     <#= Acceptor.TypeKind == TypeKind.Interface ? "" : "public abstract " #><#= GetReturnType(BaseResult) #> Accept<#= IfAsync("Async") #><#= GetTypeParamStr() #>(<#= Visitor.ToDisplayString() #> visitor<#= GetTypeArgListStr() #>)<#= GetTypeConstraintList() #>;
 }
@@ -34,7 +34,7 @@ partial interface <#= GetTypeIdentifier(Visitor) #>
 namespace <#= GetNamespace(acceptor) #>
 {
 <#   } #>
-partial class <#= GetTypeIdentifier(acceptor) #>: <#= Acceptor.ToDisplayString() #>
+partial <#= GetTypeDeclarationKeyword(acceptor) #> <#= GetTypeIdentifier(acceptor) #>: <#= Acceptor.ToDisplayString() #>
 {
     <#= Acceptor.TypeKind == TypeKind.Interface ? "" : "public sealed override " #><#= IfAsync("async ") #><#= GetReturnType(BaseResult) #> <#= Acceptor.TypeKind == TypeKind.Interface ? $"{Acceptor.ToDisplayString()}." : "" #>Accept<#= IfAsync("Async") #><#= GetTypeParamStr() #>(<#= Visitor.ToDisplayString() #> visitor<#= GetTypeArgListStr() #>) => <#= BaseResult is null || result is null || IsGeneric ? "" : $"({BaseResult.ToDisplayString()})" #><#= IfAsync("await ") #>visitor.Visit<#= IfAsync("Async") #>(<#= self is null ? "" : $"({self.ToDisplayString()})" #>this<#= GetArgListStr() #>);
 }

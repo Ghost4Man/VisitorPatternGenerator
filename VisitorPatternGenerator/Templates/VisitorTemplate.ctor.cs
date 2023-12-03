@@ -100,4 +100,11 @@ partial class VisitorTemplate
 
     public static string GetTypeIdentifier(INamedTypeSymbol type)
         => type.ToDisplayString(SymbolDisplayFormat.MinimallyQualifiedFormat.WithGenericsOptions(SymbolDisplayGenericsOptions.IncludeTypeParameters | SymbolDisplayGenericsOptions.IncludeVariance));
+
+    public static string GetTypeDeclarationKeyword(INamedTypeSymbol type)
+        => (type.IsRecord ? "record " : "") + type.TypeKind switch {
+            TypeKind.Struct => "struct",
+            TypeKind.Interface => "interface",
+            _ => "class",
+        };
 }
