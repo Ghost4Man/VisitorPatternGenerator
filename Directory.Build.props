@@ -14,15 +14,15 @@
 
   <PropertyGroup>
     <Version>0.1.2</Version>
-    <Authors>hikarin522</Authors>
+    <Authors>hikarin522, Ghost4Man</Authors>
     <Copyright>(c) 2023 hikarin522.</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>https://github.com/hikarin522/VisitorPatternGenerator</RepositoryUrl>
+    <RepositoryUrl>https://github.com/Ghost4Man/VisitorPatternGenerator</RepositoryUrl>
     <PackageProjectUrl>$(RepositoryUrl)</PackageProjectUrl>
     <PackageTags>visitor;sourcegenerator</PackageTags>
-    <Description>C# source generator to help implement the visitor design pattern.</Description>
+    <Description>C# source generator to help implement the visitor design pattern. (fork)</Description>
   </PropertyGroup>
 
 </Project>

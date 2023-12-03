@@ -10,6 +10,7 @@
     <DevelopmentDependency>true</DevelopmentDependency>
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
+    <PackageId>Ghost4Man.$(AssemblyName)</PackageId>
   </PropertyGroup>
 
   <ItemGroup>
